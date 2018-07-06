@@ -17,7 +17,7 @@ namespace IpAddressValidation.Test
             //Arrange
             var expected = false;
 
-            var sut = new IpAddressValidator();
+            var sut = CreateIpAddressValidator();
 
             //Act
             var actual = sut.ValidateIpv4Address(ipAddress);
@@ -34,7 +34,7 @@ namespace IpAddressValidation.Test
             //Arrange
             var expected = false;
 
-            var sut = new IpAddressValidator();
+            var sut = CreateIpAddressValidator();
 
             //Act
             var actual = sut.ValidateIpv4Address(ipAddress);
@@ -52,7 +52,7 @@ namespace IpAddressValidation.Test
             //Arrange
             var expected = true;
 
-            var sut = new IpAddressValidator();
+            var sut = CreateIpAddressValidator();
 
             //Act
             var actual = sut.ValidateIpv4Address(ipAddress);
@@ -61,7 +61,9 @@ namespace IpAddressValidation.Test
             Assert.AreEqual(expected, actual);
         }
 
-
-
+        public IpAddressValidator CreateIpAddressValidator()
+        {
+            return new IpAddressValidator();
+        }
     }
 }
